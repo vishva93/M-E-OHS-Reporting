@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOC Summary</title>
+    <title>Report Hazard (HOC)</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h2>HOC Summary</h2>
-        <p>All reported hazards will be listed here.</p>
+        <h2>Report Hazard (HOC)</h2>
+        <form id="hoc-form">
+            <input type="text" placeholder="Hazard Name" required>
+            <input type="date" required>
+            <input type="text" placeholder="Location" required>
+            <textarea placeholder="Description" required></textarea>
+            <input type="file" required>
+            <button type="submit" class="button">Submit Report</button>
+        </form>
         <a href="index.html" class="button">Home</a>
     </div>
 </body>
