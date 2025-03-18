@@ -5,40 +5,84 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
+
 .container {
-    max-width: 400px;
-    margin: 50px auto;
+    width: 90%;
+    max-width: 500px;
     background: #1c2b46;
     padding: 30px;
     border-radius: 10px;
+    text-align: center;
 }
-h2 {
-    font-size: 20px;
+
+h1, h2, h3 {
+    margin-bottom: 15px;
 }
+
 .button {
     display: block;
     width: 100%;
+    max-width: 300px;
     background: #005bb5;
     color: white;
     padding: 12px;
-    margin: 8px 0;
+    margin: 10px auto;
     border-radius: 5px;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
+    text-align: center;
 }
+
 .button:hover {
     background: #0073e6;
 }
-input, textarea {
-    width: 100%;
+
+input, textarea, select {
+    width: calc(100% - 20px);
     padding: 10px;
-    margin: 5px 0;
+    margin: 10px 0;
     border-radius: 5px;
     border: none;
     font-size: 14px;
+    text-align: center;
 }
+
 textarea {
     height: 100px;
+    resize: none;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+th {
+    background: #005bb5;
+    color: white;
+}
+
+td {
+    background: #1c2b46;
+}
+
+/* Centering the form elements */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
