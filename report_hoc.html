@@ -4,29 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report Hazard (HOC)</title>
-    <style>
-        /* Add styles from previous code */
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h2>Report Hazard (HOC)</h2>
         <form id="hoc-form">
-            <input type="text" id="hoc-name" placeholder="Hazard Name" required>
-            <input type="date" id="hoc-date" required>
-            <input type="text" id="hoc-location" placeholder="Location" required>
-            <textarea id="hoc-description" placeholder="Description" required></textarea>
-            <input type="file" id="hoc-picture" required>
+            <input type="text" placeholder="Hazard Name" required>
+            <input type="date" required>
+            <input type="text" placeholder="Location" required>
+            <textarea placeholder="Description" required></textarea>
+            <input type="file" required>
             <button type="submit" class="button">Submit Report</button>
         </form>
+        <a href="index.html" class="button">Home</a>
     </div>
-
-    <script>
-        document.getElementById('hoc-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('HOC Report Submitted');
-            document.getElementById('hoc-form').reset();
-        });
-    </script>
 </body>
 </html>
