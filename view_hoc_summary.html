@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOC Summary</title>
+    <style>
+        /* Add styles from previous code */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>HOC Summary</h2>
+        <ul id="hoc-summary-list"></ul>
+    </div>
+
+    <script>
+        const hocSummaryList = JSON.parse(localStorage.getItem('hocReports')) || [];
+        const summaryList = document.getElementById('hoc-summary-list');
+        hocSummaryList.forEach(report => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${report.name} - ${report.date} at ${report.location}`;
+            summaryList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
