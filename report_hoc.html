@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Report Hazard (HOC)</title>
+    <title>Report HOC</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h2>Report Hazard (HOC)</h2>
+        <h2>Report HOC</h2>
         <form id="hoc-form">
-            <input type="text" id="name" placeholder="Hazard Name" required>
-            <input type="date" id="date" required>
-            <input type="text" id="location" placeholder="Location" required>
-            <textarea id="description" placeholder="Description" required></textarea>
-            <button type="submit" class="button">Submit Report</button>
+            <input type="text" id="hoc-name" placeholder="Your Name" required>
+            <input type="date" id="hoc-date" required>
+            <input type="text" id="hoc-location" placeholder="Location" required>
+            <textarea id="hoc-description" placeholder="Hazard Description" required></textarea>
+            <input type="file" id="hoc-image" accept="image/*">
+            <button type="submit" class="button">Submit HOC</button>
         </form>
         <a href="index.html" class="button">Home</a>
     </div>
@@ -22,20 +23,19 @@
     <script>
         document.getElementById("hoc-form").addEventListener("submit", function(event) {
             event.preventDefault();
-
-            const name = document.getElementById("name").value;
-            const date = document.getElementById("date").value;
-            const location = document.getElementById("location").value;
-            const description = document.getElementById("description").value;
+            
+            const name = document.getElementById("hoc-name").value;
+            const date = document.getElementById("hoc-date").value;
+            const location = document.getElementById("hoc-location").value;
+            const description = document.getElementById("hoc-description").value;
 
             const hocReport = { name, date, location, description };
-
             let hocReports = JSON.parse(localStorage.getItem("hocReports")) || [];
             hocReports.push(hocReport);
             localStorage.setItem("hocReports", JSON.stringify(hocReports));
 
-            alert("HOC Report submitted successfully!");
-            window.location.href = "view_hoc_summary.html"; 
+            alert("HOC reported successfully!");
+            window.location.href = "view_hoc_summary.html";
         });
     </script>
 </body>
