@@ -3,24 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Report an Incident/Accident</title>
+    <title>Report Accident/Incident</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h2>Report an Incident / Accident</h2>
-        <form id="accident-form">
-            <input type="text" placeholder="Incident/Accident Name" required>
-            <input type="date" required>
-            <input type="text" placeholder="Location" required>
-            <textarea placeholder="Description" required></textarea>
-            <h3>Injuries or Damages:</h3>
-            <textarea placeholder="Injuries or damages that occurred" required></textarea>
-            <h3>Emergency Response:</h3>
-            <textarea placeholder="Details of emergency response taken" required></textarea>
+        <h2>Report Accident / Incident</h2>
+        <form id="incident-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="date" id="date" required>
+            <input type="text" id="location" placeholder="Location" required>
+            <textarea id="description" placeholder="Incident Details" required></textarea>
+            <label for="image">Upload Image (optional):</label>
+            <input type="file" id="image" accept="image/*">
             <button type="submit" class="button">Submit Report</button>
         </form>
         <a href="index.html" class="button">Home</a>
     </div>
+
+    <script>
+        document.getElementById("incident-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const date = document.getElementById("date").value;
+            const location = document.getElementById("location").value;
+            const description = document.getElementById("description").value;
+
+            const incidentReport = { name, date, location, description };
+
+            let incidentReports = JSON.parse(localStorage.getItem("incidentReports")) || [];
+            incidentReports.push(incidentReport);
+            localStorage.setItem("incidentReports", JSON.stringify(incidentReports));
+
+            alert("Incident Report submitted successfully!");
+            window.location.href = "index.html"; 
+        });
+    </script>
 </body>
 </html>
