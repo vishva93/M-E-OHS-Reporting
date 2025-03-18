@@ -9,33 +9,8 @@
 <body>
     <div class="container">
         <h2>HOC Summary</h2>
-        <table border="1" width="100%">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Location</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody id="hoc-table-body"></tbody>
-        </table>
+        <p>Data is stored in Netlify submissions. Download it from the Netlify dashboard.</p>
         <a href="index.html" class="button">Home</a>
     </div>
-
-    <script>
-        const hocReports = JSON.parse(localStorage.getItem("hocReports")) || [];
-        const hocTableBody = document.getElementById("hoc-table-body");
-
-        hocReports.forEach(report => {
-            const row = `<tr>
-                <td>${report.name}</td>
-                <td>${report.date}</td>
-                <td>${report.location}</td>
-                <td>${report.description}</td>
-            </tr>`;
-            hocTableBody.innerHTML += row;
-        });
-    </script>
 </body>
 </html>
