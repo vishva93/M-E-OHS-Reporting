@@ -9,33 +9,14 @@
 <body>
     <div class="container">
         <h2>Do a Safety Walk</h2>
-        <form id="safety-walk-form">
-            <input type="text" id="walk-name" placeholder="Your Name" required>
-            <input type="date" id="walk-date" required>
-            <input type="text" id="walk-location" placeholder="Location" required>
-            <textarea id="walk-checklist" placeholder="Checklist Details" required></textarea>
+        <form name="safety-walk" method="POST" data-netlify="true">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="date" name="date" required>
+            <input type="text" name="location" placeholder="Location" required>
+            <textarea name="checklist" placeholder="Checklist Details" required></textarea>
             <button type="submit" class="button">Submit Safety Walk</button>
         </form>
         <a href="index.html" class="button">Home</a>
     </div>
-
-    <script>
-        document.getElementById("safety-walk-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            const name = document.getElementById("walk-name").value;
-            const date = document.getElementById("walk-date").value;
-            const location = document.getElementById("walk-location").value;
-            const checklist = document.getElementById("walk-checklist").value;
-
-            const safetyWalk = { name, date, location, checklist };
-            let safetyWalks = JSON.parse(localStorage.getItem("safetyWalks")) || [];
-            safetyWalks.push(safetyWalk);
-            localStorage.setItem("safetyWalks", JSON.stringify(safetyWalks));
-
-            alert("Safety Walk submitted successfully!");
-            window.location.href = "index.html";
-        });
-    </script>
 </body>
 </html>
