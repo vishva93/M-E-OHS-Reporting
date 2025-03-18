@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report an Incident/Accident</title>
+    <style>
+        /* Add styles from previous code */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Report an Incident/Accident</h2>
+        <form id="accident-form">
+            <input type="text" id="accident-name" placeholder="Accident/Incident Name" required>
+            <input type="date" id="accident-date" required>
+            <input type="text" id="accident-location" placeholder="Location" required>
+            <textarea id="accident-description" placeholder="Description" required></textarea>
+            <br>
+            <h3>Injuries or Damages:</h3>
+            <textarea id="injuries" placeholder="Injuries or damages that occurred" required></textarea>
+            <br>
+            <h3>Emergency Response:</h3>
+            <textarea id="emergency-response" placeholder="Details of emergency response taken" required></textarea>
+            <br>
+            <button type="submit" class="button">Submit Accident/Incident</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('accident-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Accident/Incident Reported');
+            document.getElementById('accident-form').reset();
+        });
+    </script>
+</body>
+</html>
