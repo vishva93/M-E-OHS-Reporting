@@ -48,6 +48,20 @@
         .button:hover {
             background: #0073e6;
         }
+        .form-container, .summary-container {
+            display: none;
+            margin-top: 20px;
+        }
+        input[type="text"], input[type="date"], input[type="file"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        textarea {
+            height: 100px;
+        }
     </style>
 </head>
 <body>
@@ -57,10 +71,121 @@
         <h1>ALERT</h1>
         <h2>OHS Management System</h2>
         
-        <a href="#" class="button">Report HOC</a>
-        <a href="#" class="button">View HOC Summary</a>
-        <a href="#" class="button">Do a Safety Walk</a>
-        <a href="#" class="button">Report an Incident/Accident</a>
+        <a href="#" class="button" id="report-hoc-btn">Report HOC</a>
+        <a href="#" class="button" id="view-hoc-summary-btn">View HOC Summary</a>
+        <a href="#" class="button" id="safety-walk-btn">Do a Safety Walk</a>
+        <a href="#" class="button" id="report-accident-btn">Report an Incident/Accident</a>
+        
+        <!-- Report HOC Form -->
+        <div class="form-container" id="report-hoc-form">
+            <h2>Report Hazard (HOC)</h2>
+            <form id="hoc-form">
+                <input type="text" id="hoc-name" placeholder="Hazard Name" required>
+                <input type="date" id="hoc-date" required>
+                <input type="text" id="hoc-location" placeholder="Location" required>
+                <textarea id="hoc-description" placeholder="Description" required></textarea>
+                <input type="file" id="hoc-picture" required>
+                <button type="submit" class="button">Submit Report</button>
+            </form>
+        </div>
+        
+        <!-- View HOC Summary -->
+        <div class="summary-container" id="hoc-summary-container">
+            <h2>HOC Summary</h2>
+            <ul id="hoc-summary-list"></ul>
+        </div>
+        
+        <!-- Safety Walk Form -->
+        <div class="form-container" id="safety-walk-form">
+            <h2>Do a Safety Walk</h2>
+            <form id="safety-walk-form">
+                <input type="text" id="safety-walk-name" placeholder="Inspector Name" required>
+                <input type="date" id="safety-walk-date" required>
+                <input type="text" id="safety-walk-location" placeholder="Location" required>
+                <textarea id="safety-walk-checklist" placeholder="Checklist" required></textarea>
+                <button type="submit" class="button">Submit Walk</button>
+            </form>
+        </div>
+
+        <!-- Report Accident/Incident Form -->
+        <div class="form-container" id="accident-form">
+            <h2>Report an Incident/Accident</h2>
+            <form id="accident-form">
+                <input type="text" id="accident-name" placeholder="Accident/Incident Name" required>
+                <input type="date" id="accident-date" required>
+                <input type="text" id="accident-location" placeholder="Location" required>
+                <textarea id="accident-description" placeholder="Description" required></textarea>
+                <button type="submit" class="button">Submit Accident</button>
+            </form>
+        </div>
     </div>
+
+    <script>
+        // Show and hide forms based on button clicks
+        document.getElementById('report-hoc-btn').addEventListener('click', function() {
+            toggleForm('report-hoc-form');
+        });
+        document.getElementById('view-hoc-summary-btn').addEventListener('click', function() {
+            showHOCSummary();
+        });
+        document.getElementById('safety-walk-btn').addEventListener('click', function() {
+            toggleForm('safety-walk-form');
+        });
+        document.getElementById('report-accident-btn').addEventListener('click', function() {
+            toggleForm('accident-form');
+        });
+
+        // Toggle form visibility
+        function toggleForm(formId) {
+            const forms = document.querySelectorAll('.form-container');
+            forms.forEach(form => form.style.display = 'none');
+            document.getElementById(formId).style.display = 'block';
+        }
+
+        // Show HOC Summary
+        function showHOCSummary() {
+            const hocSummaryList = JSON.parse(localStorage.getItem('hocReports')) || [];
+            const summaryContainer = document.getElementById('hoc-summary-container');
+            const summaryList = document.getElementById('hoc-summary-list');
+            summaryList.innerHTML = '';
+            hocSummaryList.forEach(report => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${report.name} - ${report.date} at ${report.location}`;
+                summaryList.appendChild(listItem);
+            });
+            summaryContainer.style.display = 'block';
+        }
+
+        // Report HOC Form Submit
+        document.getElementById('hoc-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const hocReports = JSON.parse(localStorage.getItem('hocReports')) || [];
+            const newReport = {
+                name: document.getElementById('hoc-name').value,
+                date: document.getElementById('hoc-date').value,
+                location: document.getElementById('hoc-location').value,
+                description: document.getElementById('hoc-description').value,
+                picture: document.getElementById('hoc-picture').files[0]?.name || 'No picture',
+            };
+            hocReports.push(newReport);
+            localStorage.setItem('hocReports', JSON.stringify(hocReports));
+            alert('HOC Report Submitted');
+            document.getElementById('hoc-form').reset();
+        });
+
+        // Safety Walk Form Submit
+        document.getElementById('safety-walk-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Safety Walk Submitted');
+            document.getElementById('safety-walk-form').reset();
+        });
+
+        // Accident Form Submit
+        document.getElementById('accident-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Accident/Incident Reported');
+            document.getElementById('accident-form').reset();
+        });
+    </script>
 </body>
 </html>
