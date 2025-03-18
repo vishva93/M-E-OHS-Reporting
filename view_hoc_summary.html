@@ -9,38 +9,32 @@
 <body>
     <div class="container">
         <h2>HOC Summary</h2>
-        <table>
+        <table border="1" width="100%">
             <thead>
                 <tr>
-                    <th>Hazard Name</th>
+                    <th>Name</th>
                     <th>Date</th>
                     <th>Location</th>
                     <th>Description</th>
                 </tr>
             </thead>
-            <tbody id="hoc-summary">
-                <!-- Entries will be added dynamically -->
-            </tbody>
+            <tbody id="hoc-table-body"></tbody>
         </table>
         <a href="index.html" class="button">Home</a>
     </div>
 
     <script>
-        // Retrieve stored HOC data from localStorage
-        document.addEventListener("DOMContentLoaded", function() {
-            const hocSummary = JSON.parse(localStorage.getItem("hocReports")) || [];
-            const hocTable = document.getElementById("hoc-summary");
+        const hocReports = JSON.parse(localStorage.getItem("hocReports")) || [];
+        const hocTableBody = document.getElementById("hoc-table-body");
 
-            hocSummary.forEach(hoc => {
-                const row = document.createElement("tr");
-                row.innerHTML = `
-                    <td>${hoc.name}</td>
-                    <td>${hoc.date}</td>
-                    <td>${hoc.location}</td>
-                    <td>${hoc.description}</td>
-                `;
-                hocTable.appendChild(row);
-            });
+        hocReports.forEach(report => {
+            const row = `<tr>
+                <td>${report.name}</td>
+                <td>${report.date}</td>
+                <td>${report.location}</td>
+                <td>${report.description}</td>
+            </tr>`;
+            hocTableBody.innerHTML += row;
         });
     </script>
 </body>
