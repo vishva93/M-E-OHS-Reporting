@@ -14,31 +14,10 @@
             <input type="date" id="date" required>
             <input type="text" id="location" placeholder="Location" required>
             <textarea id="description" placeholder="Incident Details" required></textarea>
-            <label for="image">Upload Image (optional):</label>
             <input type="file" id="image" accept="image/*">
             <button type="submit" class="button">Submit Report</button>
         </form>
         <a href="index.html" class="button">Home</a>
     </div>
-
-    <script>
-        document.getElementById("incident-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            const name = document.getElementById("name").value;
-            const date = document.getElementById("date").value;
-            const location = document.getElementById("location").value;
-            const description = document.getElementById("description").value;
-
-            const incidentReport = { name, date, location, description };
-
-            let incidentReports = JSON.parse(localStorage.getItem("incidentReports")) || [];
-            incidentReports.push(incidentReport);
-            localStorage.setItem("incidentReports", JSON.stringify(incidentReports));
-
-            alert("Incident Report submitted successfully!");
-            window.location.href = "index.html"; 
-        });
-    </script>
 </body>
 </html>
