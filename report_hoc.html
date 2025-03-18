@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Hazard (HOC)</title>
+    <style>
+        /* Add styles from previous code */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Report Hazard (HOC)</h2>
+        <form id="hoc-form">
+            <input type="text" id="hoc-name" placeholder="Hazard Name" required>
+            <input type="date" id="hoc-date" required>
+            <input type="text" id="hoc-location" placeholder="Location" required>
+            <textarea id="hoc-description" placeholder="Description" required></textarea>
+            <input type="file" id="hoc-picture" required>
+            <button type="submit" class="button">Submit Report</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('hoc-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('HOC Report Submitted');
+            document.getElementById('hoc-form').reset();
+        });
+    </script>
+</body>
+</html>
