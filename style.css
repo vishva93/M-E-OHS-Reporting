@@ -6,9 +6,11 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    overflow-y: auto; /* Allow scrolling */
 }
 
 .container {
@@ -18,6 +20,8 @@ body {
     padding: 30px;
     border-radius: 10px;
     text-align: center;
+    margin: 20px 0; /* Ensure spacing */
+    box-sizing: border-box;
 }
 
 h1, h2, h3 {
@@ -58,31 +62,12 @@ textarea {
     resize: none;
 }
 
-/* Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #ccc;
-}
-
-th {
-    background: #005bb5;
-    color: white;
-}
-
-td {
-    background: #1c2b46;
-}
-
-/* Centering the form elements */
+/* Enable scrolling for forms with many fields */
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding-bottom: 20px;
 }
