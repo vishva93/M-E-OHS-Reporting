@@ -10,14 +10,33 @@
     <div class="container">
         <h2>Report Hazard (HOC)</h2>
         <form id="hoc-form">
-            <input type="text" placeholder="Hazard Name" required>
-            <input type="date" required>
-            <input type="text" placeholder="Location" required>
-            <textarea placeholder="Description" required></textarea>
-            <input type="file" required>
+            <input type="text" id="name" placeholder="Hazard Name" required>
+            <input type="date" id="date" required>
+            <input type="text" id="location" placeholder="Location" required>
+            <textarea id="description" placeholder="Description" required></textarea>
             <button type="submit" class="button">Submit Report</button>
         </form>
         <a href="index.html" class="button">Home</a>
     </div>
+
+    <script>
+        document.getElementById("hoc-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const date = document.getElementById("date").value;
+            const location = document.getElementById("location").value;
+            const description = document.getElementById("description").value;
+
+            const hocReport = { name, date, location, description };
+
+            let hocReports = JSON.parse(localStorage.getItem("hocReports")) || [];
+            hocReports.push(hocReport);
+            localStorage.setItem("hocReports", JSON.stringify(hocReports));
+
+            alert("HOC Report submitted successfully!");
+            window.location.href = "view_hoc_summary.html"; 
+        });
+    </script>
 </body>
 </html>
