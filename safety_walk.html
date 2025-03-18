@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do a Safety Walk</title>
+    <style>
+        /* Add styles from previous code */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Do a Safety Walk</h2>
+        <form id="safety-walk-form">
+            <input type="text" id="safety-walk-name" placeholder="Inspector Name" required>
+            <input type="date" id="safety-walk-date" required>
+            <input type="text" id="safety-walk-location" placeholder="Location" required>
+            <textarea id="safety-walk-checklist" placeholder="Checklist" required></textarea>
+            <button type="submit" class="button">Submit Walk</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('safety-walk-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Safety Walk Submitted');
+            document.getElementById('safety-walk-form').reset();
+        });
+    </script>
+</body>
+</html>
