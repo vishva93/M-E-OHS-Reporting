@@ -4,23 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOC Summary</title>
-    <style>
-        /* Add styles from previous code */
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h2>HOC Summary</h2>
-        <ul id="hoc-summary-list"></ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Hazard Name</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody id="hoc-summary">
+                <!-- Entries will be added dynamically -->
+            </tbody>
+        </table>
+        <a href="index.html" class="button">Home</a>
     </div>
 
     <script>
-        const hocSummaryList = JSON.parse(localStorage.getItem('hocReports')) || [];
-        const summaryList = document.getElementById('hoc-summary-list');
-        hocSummaryList.forEach(report => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `${report.name} - ${report.date} at ${report.location}`;
-            summaryList.appendChild(listItem);
+        // Retrieve stored HOC data from localStorage
+        document.addEventListener("DOMContentLoaded", function() {
+            const hocSummary = JSON.parse(localStorage.getItem("hocReports")) || [];
+            const hocTable = document.getElementById("hoc-summary");
+
+            hocSummary.forEach(hoc => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${hoc.name}</td>
+                    <td>${hoc.date}</td>
+                    <td>${hoc.location}</td>
+                    <td>${hoc.description}</td>
+                `;
+                hocTable.appendChild(row);
+            });
         });
     </script>
 </body>
