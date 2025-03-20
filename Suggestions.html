@@ -100,7 +100,7 @@
 
 <body>
     <div class="container">
-        <h1>Report a Hazard</h1>
+        <h1>Suggetions</h1>
         <form name="hazard-report" method="POST" data-netlify="true">
             
             <!-- SBU Name Dropdown -->
@@ -118,36 +118,21 @@
                 </select>
             </div>
 
-            <!-- Name of Reporting Person -->
+            <!-- Name -->
             <div class="form-group">
                 <label for="reporter_name">Name of Reporting Person:</label>
                 <input type="text" id="reporter_name" name="reporter_name" required>
             </div>
-
-            <!-- Date Picker -->
+            
+            <!-- Name -->
             <div class="form-group">
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date" required>
+                <label for="reporter_name">Contact Number:</label>
+                <input type="text" id="reporter_name" name="reporter_name" required>
             </div>
-
-            <!-- Location Dropdown -->
-            <div class="form-group">
-                <label for="location">Location:</label>
-                <select id="location" name="location" required>
-                    <option value="ADV headoffice">ADV Headoffice</option>
-                    <option value="Hayleys Headoffice">Hayleys Headoffice</option>
-                    <option value="Sayuru Sewana">Sayuru Sewana</option>
-                    <option value="Bagging Plant">Bagging Plant</option>
-                    <option value="Galle Office">Galle Office</option>
-                    <option value="HIP Port">HIP Port</option>
-                    <option value="CMB Port">CMB Port</option>
-                    <option value="CMB workshop">CMB Workshop</option>
-                </select>
-            </div>
-
+            
             <!-- Brief Description of Hazard -->
             <div class="form-group">
-                <label for="hazard_description">Brief Description of Hazard:</label>
+                <label for="hazard_description">Brief Description of your Suggetion:</label>
                 <textarea id="hazard_description" name="hazard_description" required placeholder="Provide a detailed description of the hazard..."></textarea>
             </div>
 
