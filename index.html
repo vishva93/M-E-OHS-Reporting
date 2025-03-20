@@ -1,22 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advantis OHS Management System</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ALERT OHS Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            background-color: #162447;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .button-container a {
+            background-color: #1f4068;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            flex: 1 1 calc(33.333% - 10px);
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .button-container a:hover {
+            background-color: #e43f5a;
+        }
+
+        @media (max-width: 600px) {
+            .button-container a {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
-        <div class="logo">ADVANTIS</div>
-        <div class="subtext">ENERGY & MARINE</div>
+	<img src="Engineering.png" alt="Engineering Logo" style="max-width: 50%; height: auto;">
         <h1>ALERT</h1>
-        <h2>OHS Management System</h2>
-
-        <a href="report_hoc.html" class="button">Report HOC</a>
-        <a href="view_hoc_summary.html" class="button">View HOC Summary</a>
-        <a href="safety_walk.html" class="button">Do a Safety Walk</a>
-        <a href="accident_incident.html" class="button">Report an Incident / Accident</a>
+            <h2>OHS Management System</h2>
+            <div class="button-container">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdxK06giZyML584souZtXdZlH-MnU3mipSZuTdKh6yPm0LwuQ/viewform">Report a <b>Hazard</b></a>
+                <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSefEagbqAZhvOS0gZn_e7ZxgInDAvOx2gzdcEnCBahYBIiQ5MccRHXKA5io6xCsNI63qKmqO4yjDdk/pubhtml?gid=483913040&single=true">View <b>HOC Summary</b></a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfMvGr2g7JxxA_ySTwo3lN8nIRI4EyiVHHTmW2uZzCDvcMb2Q/viewform">Do a <b>Safety Walk</b></a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMFSI69N8q_vOXjYPVVk3wciGp487amrnMoouKNKO7vn7DFw/viewform">Request <b>PPE</b></a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeBmPshJhWSOCRxvYcwCHs_apMixK4ZIuhrHpxCYKDR8EOERA/viewform">Upload <b>Toolbox Talks</b></a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFGIZ1SYPs2YtHiO-13SOi_Y-JPF8x6sl-DocdblnDqQfCbg/viewform">Report an <b>Incident/Accident</b></a>
+                <a href="https://drive.google.com/drive/folders/1eTr9XXrZeVNUAKhHZRNLj-RLFeucYh-t">View <b>Certificates</b></a>
+            </div>
     </div>
 </body>
+
 </html>
