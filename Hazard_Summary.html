@@ -1,13 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Spreadsheet Display</title>
+    <title>HOC Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: #fff;
+            margin: 0;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            background-color: #162447;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 300px;
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        select, input[type="date"], input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            color: #000;
+        }
+
+        textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .button-container a, .button-container button {
+            background-color: #1f4068;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button-container a:hover, .button-container button:hover {
+            background-color: #e43f5a;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+        }
+    </style>
 </head>
+
 <body>
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS3YFUBupg01BfQgWglSWugqrQ6TF1_N3hT8BtBqD7XZUzsTyivQrhd-i4wwlw5I50Kuvzczc5dlDHb/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
-            width="100%" height="600px">
-    </iframe>
+    <div class="container">
+        <h1>HOC Summary</h1>
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS3YFUBupg01BfQgWglSWugqrQ6TF1_N3hT8BtBqD7XZUzsTyivQrhd-i4wwlw5I50Kuvzczc5dlDHb/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="600px">
+        </iframe>      
+    </div>
 </body>
 </html>
