@@ -44,8 +44,6 @@
         .form-group {
             display: flex;
             flex-direction: column;
-            width: 100%;
-            max-width: 300px;
             text-align: left;
         }
 
@@ -67,6 +65,19 @@
         textarea {
             height: 150px;
             resize: none;
+        }
+
+        .dropdown-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .dropdown-group .form-group {
+            width: 50%;
+            max-width: 250px;
         }
 
         .button-container {
@@ -102,20 +113,36 @@
     <div class="container">
         <h1>Report a Hazard</h1>
         <form name="hazard-report" method="POST" data-netlify="true">
-            
-            <!-- SBU Name Dropdown -->
-            <div class="form-group">
-                <label for="sbu">SBU Name:</label>
-                <select id="sbu" name="sbu" required>
-                    <option value="HES">HES</option>
-                    <option value="ADV Bunkering">ADV Bunkering</option>
-                    <option value="ADV Ships">ADV Ships</option>
-                    <option value="Clarion Shipping">Clarion Shipping</option>
-                    <option value="SLSC MO">SLSC MO</option>
-                    <option value="SLSC MS">SLSC MS</option>
-                    <option value="Intermarc">Intermarc</option>
-                    <option value="ADV Crew">ADV Crew</option>
-                </select>
+
+            <!-- SBU Name and Location Dropdowns (Side by Side) -->
+            <div class="dropdown-group">
+                <div class="form-group">
+                    <label for="sbu">SBU Name:</label>
+                    <select id="sbu" name="sbu" required>
+                        <option value="HES">HES</option>
+                        <option value="ADV Bunkering">ADV Bunkering</option>
+                        <option value="ADV Ships">ADV Ships</option>
+                        <option value="Clarion Shipping">Clarion Shipping</option>
+                        <option value="SLSC MO">SLSC MO</option>
+                        <option value="SLSC MS">SLSC MS</option>
+                        <option value="Intermarc">Intermarc</option>
+                        <option value="ADV Crew">ADV Crew</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <select id="location" name="location" required>
+                        <option value="ADV headoffice">ADV Headoffice</option>
+                        <option value="Hayleys Headoffice">Hayleys Headoffice</option>
+                        <option value="Sayuru Sewana">Sayuru Sewana</option>
+                        <option value="Bagging Plant">Bagging Plant</option>
+                        <option value="Galle Office">Galle Office</option>
+                        <option value="HIP Port">HIP Port</option>
+                        <option value="CMB Port">CMB Port</option>
+                        <option value="CMB workshop">CMB Workshop</option>
+                    </select>
+                </div>
             </div>
 
             <!-- Name of Reporting Person -->
@@ -128,21 +155,6 @@
             <div class="form-group">
                 <label for="date">Date:</label>
                 <input type="date" id="date" name="date" required>
-            </div>
-
-            <!-- Location Dropdown -->
-            <div class="form-group">
-                <label for="location">Location:</label>
-                <select id="location" name="location" required>
-                    <option value="ADV headoffice">ADV Headoffice</option>
-                    <option value="Hayleys Headoffice">Hayleys Headoffice</option>
-                    <option value="Sayuru Sewana">Sayuru Sewana</option>
-                    <option value="Bagging Plant">Bagging Plant</option>
-                    <option value="Galle Office">Galle Office</option>
-                    <option value="HIP Port">HIP Port</option>
-                    <option value="CMB Port">CMB Port</option>
-                    <option value="CMB workshop">CMB Workshop</option>
-                </select>
             </div>
 
             <!-- Brief Description of Hazard -->
