@@ -46,7 +46,8 @@
             flex-direction: column;
             width: 100%;
             max-width: 300px;
-            text-align: left;
+            text-align: center;
+            align-items: center;
         }
 
         label {
@@ -62,6 +63,7 @@
             border: 1px solid #ccc;
             background-color: #fff;
             color: #000;
+            text-align: center;
         }
 
         textarea {
@@ -100,10 +102,10 @@
 
 <body>
     <div class="container">
-        <h1>Report a Incident / Accident</h1>
+        <h1>Report an Incident / Accident</h1>
         <form name="incident-accident" method="POST" data-netlify="true">
             
-            <!-- SBU Name Dropdown -->
+            <!-- SBU Name Dropdown (Centered) -->
             <div class="form-group">
                 <label for="sbu">SBU Name:</label>
                 <select id="sbu" name="sbu" required>
@@ -130,7 +132,7 @@
                 <input type="date" id="date" name="date" required>
             </div>
 
-            <!-- Location Dropdown -->
+            <!-- Location Dropdown (Centered) -->
             <div class="form-group">
                 <label for="location">Location:</label>
                 <select id="location" name="location" required>
@@ -145,7 +147,7 @@
                 </select>
             </div>
 
-            <!-- Brief Description of Hazard -->
+            <!-- Brief Description of Incident / Accident -->
             <div class="form-group">
                 <label for="incident-accident_description">Brief Description of Incident / Accident:</label>
                 <textarea id="incident-accident_description" name="incident-accident_description" required placeholder="Provide a detailed description of the Incident / Accident"></textarea>
