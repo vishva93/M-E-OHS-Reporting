@@ -46,7 +46,8 @@
             flex-direction: column;
             width: 100%;
             max-width: 300px;
-            text-align: left;
+            text-align: center;
+            align-items: center;
         }
 
         label {
@@ -54,7 +55,7 @@
             margin-bottom: 5px;
         }
 
-        select, input[type="date"], input[type="text"], textarea {
+        select, input[type="text"], textarea {
             width: 100%;
             padding: 10px;
             font-size: 1em;
@@ -62,6 +63,7 @@
             border: 1px solid #ccc;
             background-color: #fff;
             color: #000;
+            text-align: center;
         }
 
         textarea {
@@ -103,7 +105,7 @@
         <h1>Suggestions</h1>
         <form name="suggestions" method="POST" data-netlify="true">
             
-            <!-- SBU Name Dropdown -->
+            <!-- SBU Name Dropdown (Centered) -->
             <div class="form-group">
                 <label for="sbu">SBU Name:</label>
                 <select id="sbu" name="sbu" required>
@@ -130,7 +132,7 @@
                 <input type="text" id="reporter_contact" name="reporter_contact" required>
             </div>
             
-            <!-- Brief Description of your Suggetion -->
+            <!-- Brief Description of your Suggestion -->
             <div class="form-group">
                 <label for="hazard_description">Brief Description of your Suggestion:</label>
                 <textarea id="hazard_description" name="hazard_description" required placeholder="Provide a detailed description of the Suggestion"></textarea>
